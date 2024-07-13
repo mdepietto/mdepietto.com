@@ -14,7 +14,7 @@ const AvatarWrapper = styled.img`
 
   animation: avatar-blob 8s ease-in-out infinite;
   box-shadow: -5px 5px 10px 3px rgba(56, 56, 56, 0.5);
-  
+  height: 30vw;
   max-height: 400px;
 
   @media screen and (max-width: 1007px) {

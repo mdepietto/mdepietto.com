@@ -1,5 +1,5 @@
 import React from 'react';
-import Sources from 'components/Header/Sources';
+import BioButton from 'components/Header/BioButton';
 import styled from 'styled-components';
 
 const BioWrapper = styled.div`
@@ -22,6 +22,11 @@ const InfoWrapper = styled.div`
   margin-bottom: 2vw;
 `;
 
+const BioButtonsWrapper = styled.div`
+  align-items: start;
+  width: 100%;
+`;
+
 const Bio = () => {
   return (
     <BioWrapper id='bio'>
@@ -36,7 +41,10 @@ const Bio = () => {
           Welcome to my site
         </h1>
       </InfoWrapper>
-      <Sources />
+      <BioButtonsWrapper>
+        <BioButton href='resume-dev - overleaf (May 2024).pdf' text='Resume' />
+        <BioButton href='https://github.com/mdepietto' text='GitHub' />
+      </BioButtonsWrapper>
     </BioWrapper>
   )
 }

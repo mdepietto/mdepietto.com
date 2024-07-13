@@ -1,6 +1,7 @@
 import React from 'react';
 import NavButton from 'components/Nav/NavButton';
 import { AppBar, Toolbar, Typography } from '@mui/material';
+import styled from 'styled-components';
 
 const appBarStyles = {
   background: 'linear-gradient(to bottom, rgba(25, 32, 34, .6), 20%, rgba(0, 0, 0, 0))',
@@ -23,6 +24,12 @@ const typographyStyles = {
   fontSize: '3vw',
 }
 
+const NavButtonsWrapper = styled.div`
+  display: flex;
+  justify-content: space-around;
+  width: 18%;
+`;
+
 const Nav = () => {
   return (
     <AppBar color='inherit' sx={appBarStyles}>
@@ -33,9 +40,11 @@ const Nav = () => {
         >
           MD
         </Typography>
-        <NavButton blank={false} href='#bio' text='Home' />
-        <NavButton blank={false} href='#body' text='Projects' />
-        <NavButton blank={false} href='#contact-me' text='Contact' />
+        <NavButtonsWrapper>
+          <NavButton blank={false} href='#bio' text='Home' />
+          <NavButton blank={false} href='#body' text='Projects' />
+          <NavButton blank={false} href='#contact-me' text='Contact' />
+        </NavButtonsWrapper>
 
         {/* <NavButton href='resume-dev - overleaf (May 2024).pdf' text='Resume' />
         <NavButton href='https://github.com/mdepietto' text='GitHub' />
