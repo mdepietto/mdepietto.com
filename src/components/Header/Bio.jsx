@@ -19,6 +19,7 @@ const BioWrapper = styled.div`
 
 const InfoWrapper = styled.div`
   align-items: start;
+  margin-bottom: 2vw;
 `;
 
 const Bio = () => {

@@ -5,11 +5,35 @@ const navButtonStyles = {
   color: 'white',
   fontFamily: '"Anton", sans-serif',
   fontSize: '1.2vw',
-  marginLeft: '1vw',
+  height: '2vw',
+  marginLeft: '1.5vw',
+  padding: '0 1vw',
+  position: 'relative',
 
   '&:hover': {
-    background: 'rgba(0, 0, 0, 0.5)',
+    background: 'none',
   },
+
+  '&::after': {
+    borderLeft: '3px solid white',
+    borderTopRightRadius: '5px',
+    borderBottomRightRadius: '5px',
+    content: '""',
+    height: '1.1vw',
+    left: '0',
+    position: 'absolute',
+    top: '50%',
+    transform: 'translateY(-50%)',
+    transition: 'background 0.5s ease-in-out, height 0.5s ease-in-out, width 0.5s ease-in-out',
+    width: '0',
+    zIndex: -1,
+  },
+
+  '&:hover::after': {
+    background: 'rgba(0, 0, 0, 0.5)',
+    height: '100%',
+    width: '100%',
+  }
 
   // '&::after': {
   //   content: '""',

@@ -12,10 +12,10 @@ const buttonStyles = {
   color: 'white',
   fontSize: '1.7vw',
   fontFamily: '"Anton", sans-serif',
-  height: '3.7vw',
+  height: '3.3vw',
   marginRight: '2vw',
+  padding: '0 1.7vw',
   position: 'relative',
-  width: '9vw',
 
   '&:hover': {
     background: 'none',
@@ -26,7 +26,7 @@ const buttonStyles = {
     borderTopRightRadius: '5px',
     borderBottomRightRadius: '5px',
     content: '""',
-    height: '1.7vw',
+    height: '2.2vw',
     left: '0',
     position: 'absolute',
     top: '50%',
