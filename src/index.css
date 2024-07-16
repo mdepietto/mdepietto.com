@@ -1,8 +1,5 @@
-:root {
-  --dark-blue: #192022,
-}
-
 html {
+  color: white;
   scroll-behavior: smooth;
 }
 
@@ -17,7 +14,6 @@ body {
 }
 
 h1 {
-  color: white;
   font-size: 4vw;
   font-weight: normal;
   line-height: 4vw;
@@ -25,7 +21,6 @@ h1 {
 }
 
 h2 {
-  color: white;
   font-size: 2vw;
   font-weight: normal;
   line-height: 2vw;

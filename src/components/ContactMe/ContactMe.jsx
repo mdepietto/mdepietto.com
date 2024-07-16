@@ -4,10 +4,8 @@ import styled from 'styled-components';
 
 const ContactMeWrapper = styled.div`
   align-items: center;
-  border: 2px solid orange;
   display: flex;
   flex-direction: column;
-  padding: 2rem;
 `;
 
 const ButtonsWrapper = styled.div`
@@ -15,33 +13,74 @@ const ButtonsWrapper = styled.div`
   justify-content: space-evenly;
 `;
 
-const buttonStyle = {
-  border: '3px solid violet',
-  color: 'violet',
-  fontSize: '1.5vw',
-  height: '3vw',
-  width: '14vw',
+// hover not rendering ::after background
+const buttonStyles = {
+  color: 'white',
+  fontSize: '1.7vw',
+  fontFamily: '"Anton", sans-serif',
+  marginRight: '2vw',
+  position: 'relative',
+  transition: 'padding-left 0.5s ease-in-out',
 
-  ':hover': {
-    backgroundColor: 'rgba(238, 117, 19, 0.84)',
-    border: '2px solid white',
-    color: 'white',
-  }
+  '&:hover': {
+    background: 'none',
+    paddingLeft: '1vw',
+  },
+
+  '&::before': {
+    borderBottom: '4px solid white',
+    borderBottomLeftRadius: '5px',
+    borderLeft: '4px solid white',
+    borderTop: '4px solid white',
+    borderTopLeftRadius: '5px',
+    content: '""',
+    height: '2.1vw',
+    left: '0',
+    position: 'absolute',
+    transition: 'all 0.5s ease-in-out',
+    width: '33%',
+  },
+
+  '&:hover::before': {
+    height: '100%',
+    width: '66%',
+  },
+
+  '&::after': {
+    background: 'linear-gradient(to right, rgba(0, 0, 0, .6), rgba(0, 0, 0, 0))',
+    content: '""',
+    height: '2.1vw',
+    left: '0',
+    position: 'absolute',
+    top: '0',
+    transition: 'all 0.5s ease-in-out',
+    width: '0',
+    zIndex: '-1',
+  },
+
+  '&:hover::after': {
+    height: '100%',
+    width: '66%',
+  },
 }
 
 const ContactMe = () => {
   return (
     <ContactMeWrapper id='contact-me'>
-      <h3>Let's make something together</h3>
+      <h1>Let's make something together</h1>
       <ButtonsWrapper>
         <Button
-          href=''
-          sx={buttonStyle}
-        >email</Button>
+          href="mailto:depietto.dev@gmail.com?subject=You're Hired!"
+          sx={buttonStyles}
+        >
+          email
+        </Button>
         <Button
-          href=''
-          sx={buttonStyle}
-        >phone</Button>
+          href='tel:6313164713'
+          sx={buttonStyles}
+        >
+          phone
+        </Button>
       </ButtonsWrapper>
     </ContactMeWrapper>
   );

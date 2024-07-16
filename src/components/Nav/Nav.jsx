@@ -7,7 +7,6 @@ const appBarStyles = {
   background: 'linear-gradient(to bottom, rgba(25, 32, 34, .6), 20%, rgba(0, 0, 0, 0))',
   backgroundColor: 'rgba(0, 0, 0, 0)',
   boxShadow: '0',
-  color: 'white',
   transform: 'translateY(-100%)',
 
   animation: 'slideIn 0.5s forwards',
@@ -27,7 +26,7 @@ const typographyStyles = {
 const NavButtonsWrapper = styled.div`
   display: flex;
   justify-content: space-around;
-  width: 18%;
+  width: 17%;
 `;
 
 const Nav = () => {
@@ -45,11 +44,6 @@ const Nav = () => {
           <NavButton blank={false} href='#body' text='Projects' />
           <NavButton blank={false} href='#contact-me' text='Contact' />
         </NavButtonsWrapper>
-
-        {/* <NavButton href='resume-dev - overleaf (May 2024).pdf' text='Resume' />
-        <NavButton href='https://github.com/mdepietto' text='GitHub' />
-        <NavButton href="mailto:depietto.dev@gmail.com?subject=You're Hired!" text='Email' />
-        <NavButton href='tel:6313164713' text='Phone' /> */}
       </Toolbar>
     </AppBar>
   )

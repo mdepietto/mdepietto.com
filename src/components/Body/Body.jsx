@@ -8,17 +8,36 @@ import styled from 'styled-components';
 
 const BodyWrapper = styled.div`
   align-items: center;
+
+  // dark blue
   background: rgba(25, 32, 34);
+
+  // light blue
+  // background: rgba(121, 144, 132);
+
+  // yellow
+  // background: rgba(195, 163, 77);
+
+  // red
+  // background: rgba(158, 64, 50);
+
+  // cream
+  // background: rgba(197, 185, 151);
+
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-bottom: 2rem;
+  padding: 2vw 0;
+`;
+
+const TitleWrapper = styled.h1`
+  margin-bottom: 3vw;
 `;
 
 const Body = () => {
   return (
     <BodyWrapper id='body'>
-      <h2>Projects</h2>
+      <TitleWrapper>Projects</TitleWrapper>
       <Project
         description='A note-taking app for books, movies, and shows that accesses data from a locally run SQL database'
         github='https://github.com/mdepietto/media-shelf'
