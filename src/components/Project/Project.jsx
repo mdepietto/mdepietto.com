@@ -1,48 +1,14 @@
 import React from 'react';
-import ProjectImage from 'components/Project/ProjectImage';
 import styled from 'styled-components';
-
-const ProjectWrapper = styled.div`
-  align-items: center;
-  background-color: rgba(121, 144, 132);
-  border-radius: 1rem;
-  display: flex;
-  flex-direction: ${({ reverse }) => reverse && 'row-reverse' };
-  max-width: 55vw;
-  margin-bottom: 4vh;
-  padding: 2rem;
-  justify-content: center;
-`;
-
-const DescriptionWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: ${({ reverse }) => reverse ? 'right' : 'left' };
-  padding: 2rem;
-`;
-
-// const Project = ({ description, github, image, live, reverse, title, tools }) => {
-//   return (
-//     <ProjectWrapper reverse={reverse}>
-//       <ProjectImage alt={title} github={github} live={live} src={image} />
-//       <DescriptionWrapper reverse={reverse}>
-//         <h3>{title}</h3>
-//         <p>{description}</p>
-//         <p>{tools}</p>
-//       </DescriptionWrapper>
-//     </ProjectWrapper>
-//   );
-// };
 
 const radius = '15px';
 const height = '30';
 const width = '45';
-const afterHeight = (height - .5).toString();
-const afterWidth = (width - .5).toString();
+const afterHeight = (height - 1.2).toString();
+const afterWidth = (width - 1.2).toString();
 const chop = '12';
 
-const Wrapper = styled.div`
+const ProjectWrapper = styled.div`
   background: linear-gradient(135deg, transparent ${chop}vw, white 0);
   border-radius: ${radius};
   height: ${height}vw;
@@ -65,17 +31,48 @@ const Wrapper = styled.div`
     z-index: -1;
   }
 
+  &:hover::before {
+    // find a way to make it twitchy from color -> black -> white -> color
+    background: linear-gradient(135deg, transparent ${chop}vw, green 0);
+  }
+
   &:after {
-    content: '02';
-    font-size: 10vw;
+    content: '${({ number }) => `0${number}` }';
+    font-size: 12vw;
     position: absolute;
     transform: translateY(-15%);
   }
 `;
 
-const Project = ({ description, github, image, live, reverse, title, tools }) => {
+const ContentsWrapper = styled.div`
+  align-items: end;
+  bottom: 2vw;
+  position: absolute;
+  right: 2vw;
+  text-align: right;
+  width: 90%;
+`;
+
+const ImageWrapper = styled.img`
+  border: .3vw solid white;
+  border-radius: 8px;
+  margin-bottom: 2vw;
+  position: absolute;
+  right: 2vw;
+  top: 2vw;
+  width: 26vw;
+`;
+
+const Project = ({ description, github, image, live, number, title, tools }) => {
   return (
-    <Wrapper />
+    <ProjectWrapper number={number}>
+      <ImageWrapper alt={title} github={github} live={live} src={image} />
+      <ContentsWrapper>
+        <h2>{title}</h2>
+        <h3>{description}</h3>
+        <h3>{tools}</h3>
+      </ContentsWrapper>
+    </ProjectWrapper>
   );
 };
 

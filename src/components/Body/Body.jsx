@@ -43,7 +43,8 @@ const Body = () => {
         github='https://github.com/mdepietto/media-shelf'
         image={mediaShelf}
         live=''
-        title='Media Shelf (currently being worked on)'
+        number={1}
+        title='Media Shelf (in progress)'
         tools='React Node Express SQL'
       />
       <Project
@@ -51,6 +52,7 @@ const Body = () => {
         github='https://github.com/mdepietto/movie-search-app'
         image={movieSearch}
         live=''
+        number={2}
         reverse
         title='Movie Search App'
         tools='React'
@@ -60,6 +62,7 @@ const Body = () => {
         github='https://mdepietto.itch.io/mastermind'
         image={mastermind}
         live=''
+        number={3}
         title='Mastermind Game'
         tools='JavaScript'
       />
@@ -68,6 +71,7 @@ const Body = () => {
         github='https://github.com/mdepietto/landing-testsite'
         image={trombones}
         live=''
+        number={4}
         reverse
         title='E-commerce Trombones'
         tools='HTML CSS'

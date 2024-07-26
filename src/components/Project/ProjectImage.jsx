@@ -46,6 +46,7 @@ const buttonStyles = {
   }
 }
 
+// COMPONENT MAY BE UNNEEDED
 const ProjectImage = ({ alt, github, live, src }) => {
   return (
     <ProjectImageWrapper>

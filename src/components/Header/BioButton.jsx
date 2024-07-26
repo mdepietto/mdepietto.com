@@ -7,6 +7,7 @@ const buttonStyles = {
   fontFamily: '"Anton", sans-serif',
   marginRight: '2vw',
   position: 'relative',
+  // textShadow: '-1px 1px 1px black, -2px 2px 1px black, -3px 3px 1px black, -4px 4px 1px black, -5px 5px 1px black, -6px 6px 1px black, -7px 6px 1px black',
   transition: 'padding-left 0.5s ease-in-out',
 
   '&:hover': {

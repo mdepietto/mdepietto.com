@@ -13,14 +13,15 @@ const ButtonsWrapper = styled.div`
   justify-content: space-evenly;
 `;
 
-// hover not rendering ::after background
 const buttonStyles = {
   color: 'white',
   fontSize: '1.7vw',
   fontFamily: '"Anton", sans-serif',
   marginRight: '2vw',
   position: 'relative',
+  // textShadow: '-1px 1px 1px black, -2px 2px 1px black, -3px 3px 1px black, -4px 4px 1px black, -5px 5px 1px black',
   transition: 'padding-left 0.5s ease-in-out',
+  zIndex: '1',
 
   '&:hover': {
     background: 'none',
@@ -47,12 +48,11 @@ const buttonStyles = {
   },
 
   '&::after': {
-    background: 'linear-gradient(to right, rgba(0, 0, 0, .6), rgba(0, 0, 0, 0))',
+    background: 'linear-gradient(to right, rgba(0, 0, 0, .9), rgba(0, 0, 0, 0))',
     content: '""',
     height: '2.1vw',
     left: '0',
     position: 'absolute',
-    top: '0',
     transition: 'all 0.5s ease-in-out',
     width: '0',
     zIndex: '-1',

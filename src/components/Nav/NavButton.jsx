@@ -33,7 +33,7 @@ const buttonStyles = {
   },
 
   '&::after': {
-    background: 'linear-gradient(to left, rgba(0, 0, 0, .5), rgba(0, 0, 0, 0))',
+    // background: 'linear-gradient(to left, rgba(0, 0, 0, .5), rgba(0, 0, 0, 0))',
     content: '""',
     height: '1.6vw',
     right: '0',
@@ -53,7 +53,7 @@ const NavButton = ({ blank, href, text }) => {
     <Button
       color="inherit"
       href={href}
-      target={blank && 'blank'}
+      target={blank ? 'blank' : null}
       sx={buttonStyles}
     >
       {text}

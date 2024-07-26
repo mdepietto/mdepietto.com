@@ -21,6 +21,7 @@ const typographyStyles = {
   flexGrow: 1,
   fontFamily: '"Anton", sans-serif',
   fontSize: '3vw',
+  textShadow: '-1px 1px 1px black, -2px 2px 1px black, -3px 3px 1px black, -4px 4px 1px black, -5px 5px 1px black, -6px 6px 1px black, -7px 6px 1px black',
 }
 
 const NavButtonsWrapper = styled.div`
@@ -40,7 +41,7 @@ const Nav = () => {
           MD
         </Typography>
         <NavButtonsWrapper>
-          <NavButton blank={false} href='#bio' text='Home' />
+          <NavButton blank={false} href='#' text='Home' />
           <NavButton blank={false} href='#body' text='Projects' />
           <NavButton blank={false} href='#contact-me' text='Contact' />
         </NavButtonsWrapper>

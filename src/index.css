@@ -14,10 +14,11 @@ body {
 }
 
 h1 {
-  font-size: 4vw;
+  font-size: 5vw;
   font-weight: normal;
-  line-height: 4vw;
+  line-height: 5vw;
   margin: 1vw 0;
+  text-shadow: -1px 1px 1px black, -2px 2px 1px black, -3px 3px 1px black, -4px 4px 1px black, -5px 5px 1px black, -6px 6px 1px black, -7px 6px 1px black;
 }
 
 h2 {
