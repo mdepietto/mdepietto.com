@@ -10,10 +10,10 @@ const BodyWrapper = styled.div`
   align-items: center;
 
   // dark blue
-  background: rgba(25, 32, 34);
+  // background: rgba(25, 32, 34);
 
   // light blue
-  // background: rgba(121, 144, 132);
+  background: rgba(121, 144, 132);
 
   // yellow
   // background: rgba(195, 163, 77);
@@ -40,39 +40,33 @@ const Body = () => {
       <TitleWrapper>Projects</TitleWrapper>
       <Project
         description='A note-taking app for books, movies, and shows that accesses data from a locally run SQL database'
-        github='https://github.com/mdepietto/media-shelf'
         image={mediaShelf}
-        live=''
+        link='https://github.com/mdepietto/media-shelf'
         number={1}
         title='Media Shelf (in progress)'
         tools='React Node Express SQL'
       />
       <Project
         description='An app to fetch basic information from a public api about your favorite movies'
-        github='https://github.com/mdepietto/movie-search-app'
         image={movieSearch}
-        live=''
+        link='https://github.com/mdepietto/movie-search-app'
         number={2}
-        reverse
         title='Movie Search App'
         tools='React'
       />
       <Project
         description='A modern puzzle adaptation from the old game "Bulls and Cows"'
-        github='https://mdepietto.itch.io/mastermind'
         image={mastermind}
-        live=''
+        link='https://mdepietto.itch.io/mastermind'
         number={3}
         title='Mastermind Game'
         tools='JavaScript'
       />
       <Project
         description='A mock website for selling quality trombones'
-        github='https://github.com/mdepietto/landing-testsite'
         image={trombones}
-        live=''
+        link='https://github.com/mdepietto/landing-testsite'
         number={4}
-        reverse
         title='E-commerce Trombones'
         tools='HTML CSS'
       />

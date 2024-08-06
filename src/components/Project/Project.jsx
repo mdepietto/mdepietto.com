@@ -8,14 +8,37 @@ const afterHeight = (height - 1.2).toString();
 const afterWidth = (width - 1.2).toString();
 const chop = '12';
 
-const ProjectWrapper = styled.div`
+const ProjectWrapper = styled.a`
+  @keyframes bigger {
+    100% {
+      transform: scale(1.05) translate(3%, -3%);
+    }
+  }
+
+  @keyframes glitch {
+    0%   {background: linear-gradient(135deg, transparent ${chop}vw, yellow 0)}
+    25%  {background: linear-gradient(135deg, transparent ${chop}vw, black 0)}
+    50%  {background: linear-gradient(135deg, transparent ${chop}vw, white 0)}
+    100% {background: linear-gradient(135deg, transparent ${chop}vw, yellow 0)}
+  }
+
   background: linear-gradient(135deg, transparent ${chop}vw, white 0);
   border-radius: ${radius};
+
+  // figure out box-shadow business
+  box-shadow: 0px 10px 2px black;
+  
+  color: white;
+  cursor: pointer;
   height: ${height}vw;
   margin: 5vw;
   position: relative;
   width: ${width}vw;
   z-index: 0;
+
+  &:hover {
+    animation: bigger .2s forwards;
+  }
 
   &:before {
     background: linear-gradient(135deg, transparent ${chop}vw, rgba(25, 32, 34) 0);
@@ -32,25 +55,16 @@ const ProjectWrapper = styled.div`
   }
 
   &:hover::before {
-    // find a way to make it twitchy from color -> black -> white -> color
-    background: linear-gradient(135deg, transparent ${chop}vw, green 0);
+    animation: glitch .2s forwards;
   }
 
   &:after {
     content: '${({ number }) => `0${number}` }';
     font-size: 12vw;
     position: absolute;
+    text-shadow: -1px 1px 1px black, -2px 2px 1px black, -3px 3px 1px black, -4px 4px 1px black, -5px 5px 1px black, -6px 6px 1px black, -7px 6px 1px black;
     transform: translateY(-15%);
   }
-`;
-
-const ContentsWrapper = styled.div`
-  align-items: end;
-  bottom: 2vw;
-  position: absolute;
-  right: 2vw;
-  text-align: right;
-  width: 90%;
 `;
 
 const ImageWrapper = styled.img`
@@ -63,10 +77,19 @@ const ImageWrapper = styled.img`
   width: 26vw;
 `;
 
-const Project = ({ description, github, image, live, number, title, tools }) => {
+const ContentsWrapper = styled.div`
+  align-items: end;
+  bottom: 2vw;
+  position: absolute;
+  right: 2vw;
+  text-align: right;
+  width: 90%;
+`;
+
+const Project = ({ description, image, link, number, title, tools }) => {
   return (
-    <ProjectWrapper number={number}>
-      <ImageWrapper alt={title} github={github} live={live} src={image} />
+    <ProjectWrapper href={link} number={number} target='blank'>
+      <ImageWrapper alt={title} src={image} />
       <ContentsWrapper>
         <h2>{title}</h2>
         <h3>{description}</h3>
