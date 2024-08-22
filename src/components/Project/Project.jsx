@@ -1,47 +1,38 @@
 import React from 'react';
+import projectBackground from 'images/project-background.png';
 import styled from 'styled-components';
 
 const radius = '15px';
-const height = '30';
-const width = '45';
+const height = '25';
+const width = '35';
 const afterHeight = (height - 1.2).toString();
 const afterWidth = (width - 1.2).toString();
-const chop = '12';
+const chop = '10';
 
 const ProjectWrapper = styled.a`
-  @keyframes bigger {
-    100% {
-      transform: scale(1.05) translate(3%, -3%);
-    }
-  }
-
-  @keyframes glitch {
-    0%   {background: linear-gradient(135deg, transparent ${chop}vw, yellow 0)}
-    25%  {background: linear-gradient(135deg, transparent ${chop}vw, black 0)}
-    50%  {background: linear-gradient(135deg, transparent ${chop}vw, white 0)}
-    100% {background: linear-gradient(135deg, transparent ${chop}vw, yellow 0)}
-  }
-
   background: linear-gradient(135deg, transparent ${chop}vw, white 0);
   border-radius: ${radius};
-
-  // figure out box-shadow business
-  box-shadow: 0px 10px 2px black;
-  
   color: white;
   cursor: pointer;
   height: ${height}vw;
   margin: 5vw;
   position: relative;
   width: ${width}vw;
+  transition: all .2s ease-in-out;
   z-index: 0;
 
   &:hover {
-    animation: bigger .2s forwards;
+    animation: glitch .3s forwards;
+    box-shadow: 0 20px 5px -5px black;
+    transform: scale(1.05);
   }
 
   &:before {
-    background: linear-gradient(135deg, transparent ${chop}vw, rgba(25, 32, 34) 0);
+    background: linear-gradient(
+      135deg,
+      transparent ${chop}vw,
+      rgba(25, 32, 34) ${chop}vw
+    );
     border-radius: ${radius};
     content: '';
     font-size: 14vw;
@@ -54,13 +45,16 @@ const ProjectWrapper = styled.a`
     z-index: -1;
   }
 
-  &:hover::before {
-    animation: glitch .2s forwards;
+  @keyframes glitch {
+    0%   {background: linear-gradient(135deg, transparent ${chop}vw, black 0)}
+    25%  {background: linear-gradient(135deg, transparent ${chop}vw, rgba(241, 250, 72) 0)}
+    50%  {background: linear-gradient(135deg, transparent ${chop}vw, white 0)}
+    100% {background: linear-gradient(135deg, transparent ${chop}vw, rgba(181, 245, 44) 0)}
   }
 
   &:after {
     content: '${({ number }) => `0${number}` }';
-    font-size: 12vw;
+    font-size: 11vw;
     position: absolute;
     text-shadow: -1px 1px 1px black, -2px 2px 1px black, -3px 3px 1px black, -4px 4px 1px black, -5px 5px 1px black, -6px 6px 1px black, -7px 6px 1px black;
     transform: translateY(-15%);
@@ -68,22 +62,33 @@ const ProjectWrapper = styled.a`
 `;
 
 const ImageWrapper = styled.img`
-  border: .3vw solid white;
   border-radius: 8px;
-  margin-bottom: 2vw;
   position: absolute;
-  right: 2vw;
-  top: 2vw;
-  width: 26vw;
+  right: 1.5vw;
+  top: 1.5vw;
+  width: 18vw;
 `;
 
 const ContentsWrapper = styled.div`
   align-items: end;
   bottom: 2vw;
   position: absolute;
-  right: 2vw;
+  right: 1.5vw;
   text-align: right;
-  width: 90%;
+  max-width: 91%;
+  min-height: 10vw;
+
+  h3 {
+    text-shadow: -1px 1px 1px black, -2px 2px 1px black, -3px 3px 1px black;
+  }
+`;
+
+const TitleWrapper = styled.h2`
+  display: inline-block;
+  padding: .6vw;
+  text-decoration: underline;
+  text-shadow: -1px 1px 1px black, -2px 2px 1px black, -3px 3px 1px black, -4px 4px 1px black;
+  text-underline-offset: .7vw;
 `;
 
 const Project = ({ description, image, link, number, title, tools }) => {
@@ -91,9 +96,9 @@ const Project = ({ description, image, link, number, title, tools }) => {
     <ProjectWrapper href={link} number={number} target='blank'>
       <ImageWrapper alt={title} src={image} />
       <ContentsWrapper>
-        <h2>{title}</h2>
+        <TitleWrapper>{title}</TitleWrapper>
         <h3>{description}</h3>
-        <h3>{tools}</h3>
+        <h3>- {tools}</h3>
       </ContentsWrapper>
     </ProjectWrapper>
   );

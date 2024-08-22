@@ -8,6 +8,7 @@ const buttonStyles = {
   fontFamily: '"Anton", sans-serif',
   paddingRight: '.4vw',
   position: 'relative',
+  textShadow: '-1px 1px 1px black, -2px 2px 1px black, -3px 3px 1px black, -4px 4px 1px black',
 
   '&:hover': {
     background: 'none',
@@ -29,21 +30,6 @@ const buttonStyles = {
   },
 
   '&:hover::before': {
-    width: '66%',
-  },
-
-  '&::after': {
-    // background: 'linear-gradient(to left, rgba(0, 0, 0, .5), rgba(0, 0, 0, 0))',
-    content: '""',
-    height: '1.6vw',
-    right: '0',
-    position: 'absolute',
-    transition: 'all 0.5s ease-in-out',
-    width: '0',
-    zIndex: '-1',
-  },
-
-  '&:hover::after': {
     width: '66%',
   },
 }

@@ -13,6 +13,17 @@ const FooterWrapper = styled.div`
 const Footer = () => {
   return (
     <FooterWrapper>
+      <h3 style={{ margin: '2vw', lineHeight: '1.5vw' }}>
+        I was always tinkering with something: Taking things apart,
+        figuring out how it all worked, and putting it back together.
+        It started with pens in elementary school.
+        Then, with the help of my father, to taking apart cable boxes and tv components.
+        Finally, to coding. It was only natural to follow the self-taught,
+        trial and error style learning for that as well. I find that programming has
+        been a great direction to go to scratch the itch for problem solving, 
+        conceptualizing, and strategizing that I've had my whole life. I'm excited to
+        continue sharpening my skillset and take that tinkering to new heights.
+      </h3>
       <ContactMe />
     </FooterWrapper>
   )
