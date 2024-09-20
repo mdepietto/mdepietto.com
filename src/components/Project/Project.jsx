@@ -1,5 +1,5 @@
 import React from 'react';
-import projectBackground from 'images/project-background.png';
+import { baseColors } from 'data/styles';
 import styled from 'styled-components';
 
 const radius = '15px';
@@ -31,7 +31,7 @@ const ProjectWrapper = styled.a`
     background: linear-gradient(
       135deg,
       transparent ${chop}vw,
-      rgba(25, 32, 34) ${chop}vw
+      ${baseColors.darkBlue} ${chop}vw
     );
     border-radius: ${radius};
     content: '';
@@ -45,11 +45,19 @@ const ProjectWrapper = styled.a`
     z-index: -1;
   }
 
+  &:hover::before {
+    background: linear-gradient(
+      135deg,
+      transparent ${chop}vw,
+      ${baseColors.royalBlue} ${chop}vw
+    );
+  }
+
   @keyframes glitch {
     0%   {background: linear-gradient(135deg, transparent ${chop}vw, black 0)}
-    25%  {background: linear-gradient(135deg, transparent ${chop}vw, rgba(241, 250, 72) 0)}
-    50%  {background: linear-gradient(135deg, transparent ${chop}vw, white 0)}
-    100% {background: linear-gradient(135deg, transparent ${chop}vw, rgba(181, 245, 44) 0)}
+    25%  {background: linear-gradient(135deg, transparent ${chop}vw, ${baseColors.yellow} 0)}
+    50%  {background: linear-gradient(135deg, transparent ${chop}vw, ${baseColors.blue} 0)}
+    100% {background: linear-gradient(135deg, transparent ${chop}vw, ${baseColors.lightRed} 0)}
   }
 
   &:after {

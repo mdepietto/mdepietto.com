@@ -4,29 +4,12 @@ import mediaShelf from 'images/media-shelf.jpg';
 import mastermind from 'images/mastermind.jpg';
 import movieSearch from 'images/movie-search.jpg';
 import trombones from 'images/trombones.jpg';
-import projectBackground2 from 'images/project-background2.png';
+import { baseColors } from 'data/styles';
 import styled from 'styled-components';
 
 const BodyWrapper = styled.div`
   align-items: center;
-
-  background-image: url(${projectBackground2});
-
-  // dark blue
-  // background: rgba(25, 32, 34);
-
-  // light blue
-  // background: rgba(121, 144, 132);
-
-  // yellow
-  // background: rgba(195, 163, 77);
-
-  // red
-  // background: rgba(158, 64, 50);
-
-  // cream
-  // background: rgba(197, 185, 151);
-
+  background: ${baseColors.cream};
   display: flex;
   flex-direction: column;
   padding: 2vw 0;

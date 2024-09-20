@@ -1,5 +1,5 @@
 import React from 'react';
-import BioButton from 'components/Header/BioButton';
+import LinkButton from 'components/Header/LinkButton';
 import styled from 'styled-components';
 
 const BioWrapper = styled.div`
@@ -42,8 +42,8 @@ const Bio = () => {
         </h1>
       </InfoWrapper>
       <BioButtonsWrapper>
-        <BioButton href='resume-dev - overleaf (May 2024).pdf' text='Resume' />
-        <BioButton href='https://github.com/mdepietto' text='GitHub' />
+        <LinkButton href='resume-dev - overleaf (May 2024).pdf' text='Resume' />
+        <LinkButton href='https://github.com/mdepietto' text='GitHub' />
       </BioButtonsWrapper>
     </BioWrapper>
   )
