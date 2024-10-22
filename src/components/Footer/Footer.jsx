@@ -1,19 +1,31 @@
 import React from 'react';
 import ContactMe from 'components/ContactMe/ContactMe';
-import footerImage from 'images/footer-background.png';
+import { baseColors } from 'data/styles';
 import styled from 'styled-components';
 
 const FooterWrapper = styled.div`
-  background-image: url(${footerImage});
-  background-repeat: no-repeat;
-  background-size: 100%;
+  background: ${baseColors.yellow};
   padding: 2vw 0;
+
+  > h1 {
+    margin-left: 4vw;
+  }
+
+  > h3 {
+    background: ${baseColors.royalBlue};
+    border: .5vw solid white;
+    border-radius: 15px;
+    line-height: 2vw;
+    margin: 0 20vw;
+    padding: 2vw;
+  }
 `;
 
 const Footer = () => {
   return (
     <FooterWrapper>
-      <h3 style={{ margin: '2vw', lineHeight: '1.5vw' }}>
+      <h1>Contact</h1>
+      <h3>
         I was always tinkering with something: Taking things apart,
         figuring out how it all worked, and putting it back together.
         It started with pens in elementary school.

@@ -1,12 +1,13 @@
 import React from 'react';
 import { Button } from '@mui/material';
-import { buttonStyles } from 'components/Header/LinkButton';
+import { buttonStyles } from 'components/shared/LinkButton';
 
 const navButtonStyles = {
   ...buttonStyles,
   display: 'flex',
   justifyContent: 'end',
   fontSize: '1.2vw',
+  marginRight: '0',
   paddingRight: '.4vw',
   textShadow: '-1px 1px 1px black, -2px 2px 1px black, -3px 3px 1px black, -4px 4px 1px black',
 

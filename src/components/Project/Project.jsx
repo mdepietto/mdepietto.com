@@ -15,7 +15,7 @@ const ProjectWrapper = styled.a`
   color: white;
   cursor: pointer;
   height: ${height}vw;
-  margin: 5vw;
+  margin: 4vw;
   position: relative;
   width: ${width}vw;
   transition: all .2s ease-in-out;

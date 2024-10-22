@@ -1,5 +1,5 @@
 import React from 'react';
-import LinkButton from 'components/Header/LinkButton';
+import LinkButton from 'components/shared/LinkButton';
 import styled from 'styled-components';
 
 const BioWrapper = styled.div`
@@ -7,7 +7,13 @@ const BioWrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  margin-left: 8vw;
   transform: translateX(-100%);
+
+  div {
+    margin-top: 2vw;
+    width: 100%;
+  }
 
   animation: slideIn 0.5s forwards;
   @keyframes slideIn {
@@ -17,36 +23,14 @@ const BioWrapper = styled.div`
   }
 `;
 
-const InfoWrapper = styled.div`
-  align-items: start;
-  margin-bottom: 2vw;
-`;
-
-const BioButtonsWrapper = styled.div`
-  align-items: start;
-  width: 100%;
-`;
-
-const Bio = () => {
-  return (
-    <BioWrapper id='bio'>
-      <InfoWrapper>
-        <h1>
-          I'm Mike DePietto
-        </h1>
-        <h1>
-          A Developer
-        </h1>
-        <h1>
-          Welcome to my site
-        </h1>
-      </InfoWrapper>
-      <BioButtonsWrapper>
-        <LinkButton href='resume-dev - overleaf (May 2024).pdf' text='Resume' />
-        <LinkButton href='https://github.com/mdepietto' text='GitHub' />
-      </BioButtonsWrapper>
-    </BioWrapper>
-  )
-}
+const Bio = () => (
+  <BioWrapper id='bio'>
+    <h1>Welcome to my site</h1>
+    <div>
+      <LinkButton href='resume-dev - overleaf (May 2024).pdf' text='Resume' />
+      <LinkButton href='https://github.com/mdepietto' text='GitHub' />
+    </div>
+  </BioWrapper>
+)
 
 export default Bio;

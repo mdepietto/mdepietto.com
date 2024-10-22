@@ -1,5 +1,5 @@
 import React from 'react';
-import LinkButton from 'components/Header/LinkButton';
+import LinkButton from 'components/shared/LinkButton';
 import styled from 'styled-components';
 
 const ContactMeWrapper = styled.div`
