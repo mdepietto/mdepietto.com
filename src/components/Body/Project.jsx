@@ -9,7 +9,7 @@ const afterHeight = (height - 1.2).toString();
 const afterWidth = (width - 1.2).toString();
 const chop = '10';
 
-const ProjectWrapper = styled.a`
+const Wrapper = styled.a`
   background: linear-gradient(135deg, transparent ${chop}vw, white 0);
   border-radius: ${radius};
   color: white;
@@ -31,7 +31,7 @@ const ProjectWrapper = styled.a`
     background: linear-gradient(
       135deg,
       transparent ${chop}vw,
-      ${baseColors.darkBlue} ${chop}vw
+      ${baseColors.gray} ${chop}vw
     );
     border-radius: ${radius};
     content: '';
@@ -49,15 +49,15 @@ const ProjectWrapper = styled.a`
     background: linear-gradient(
       135deg,
       transparent ${chop}vw,
-      ${baseColors.royalBlue} ${chop}vw
+      ${baseColors.blueGray} ${chop}vw
     );
   }
 
   @keyframes glitch {
     0%   {background: linear-gradient(135deg, transparent ${chop}vw, black 0)}
     25%  {background: linear-gradient(135deg, transparent ${chop}vw, ${baseColors.yellow} 0)}
-    50%  {background: linear-gradient(135deg, transparent ${chop}vw, ${baseColors.blue} 0)}
-    100% {background: linear-gradient(135deg, transparent ${chop}vw, ${baseColors.lightRed} 0)}
+    50%  {background: linear-gradient(135deg, transparent ${chop}vw, ${baseColors.gray} 0)}
+    100% {background: linear-gradient(135deg, transparent ${chop}vw, ${baseColors.lightGreen} 0)}
   }
 
   &:after {
@@ -86,7 +86,7 @@ const ContentsWrapper = styled.div`
   max-width: 91%;
   min-height: 10vw;
 
-  h3 {
+  > h3 {
     text-shadow: -1px 1px 1px black, -2px 2px 1px black, -3px 3px 1px black;
   }
 `;
@@ -101,14 +101,14 @@ const TitleWrapper = styled.h2`
 
 const Project = ({ description, image, link, number, title, tools }) => {
   return (
-    <ProjectWrapper href={link} number={number} target='blank'>
+    <Wrapper href={link} number={number} target='blank'>
       <ImageWrapper alt={title} src={image} />
       <ContentsWrapper>
         <TitleWrapper>{title}</TitleWrapper>
         <h3>{description}</h3>
         <h3>- {tools}</h3>
       </ContentsWrapper>
-    </ProjectWrapper>
+    </Wrapper>
   );
 };
 

@@ -1,15 +1,14 @@
 import React from 'react';
-import Project from 'components/Project/Project';
+import Project from 'components/Body/Project';
 import headerImage from 'images/header-background.png';
 import mediaShelf from 'images/media-shelf.jpg';
 import mastermind from 'images/mastermind.jpg';
 import movieSearch from 'images/movie-search.jpg';
 import trombones from 'images/trombones.jpg';
-import { baseColors } from 'data/styles';
 import styled from 'styled-components';
 
-const BodyWrapper = styled.div`
-  background:  linear-gradient( rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1) ), url(${headerImage});
+const Wrapper = styled.div`
+  // background:  linear-gradient( rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1) ), url(${headerImage});
   background-size: auto 100vw;
   display: flex;
   flex-direction: column;
@@ -29,8 +28,8 @@ const BodyWrapper = styled.div`
 
 const Body = () => {
   return (
-    <BodyWrapper id='body'>
-      <h1>- Projects -</h1>
+    <Wrapper id='body'>
+      <h1>Projects</h1>
       <div>
         <Project
           description='A note-taking app for books, movies, and shows that accesses data from a locally run SQL database'
@@ -65,7 +64,7 @@ const Body = () => {
           tools='HTML CSS'
         />
       </div>
-    </BodyWrapper>
+    </Wrapper>
   );
 };
 

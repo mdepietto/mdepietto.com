@@ -13,7 +13,7 @@ export const buttonStyles = {
 
   '&:hover': {
     background: 'none',
-    color: baseColors.lightRed,
+    color: baseColors.lightGreen,
   },
 
   '&::before': {

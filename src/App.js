@@ -1,6 +1,6 @@
 import React from 'react';
 import Nav from 'components/Nav/Nav';
-import HomePage from 'components/Header/Header';
+import HomePage from 'components/Homepage/Homepage';
 import Body from 'components/Body/Body';
 import Footer from 'components/Footer/Footer';
 import styled from 'styled-components';

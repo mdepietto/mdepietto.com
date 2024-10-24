@@ -10,6 +10,7 @@ const navButtonStyles = {
   marginRight: '0',
   paddingRight: '.4vw',
   textShadow: '-1px 1px 1px black, -2px 2px 1px black, -3px 3px 1px black, -4px 4px 1px black',
+  '-webkit-text-stroke': '.5px black',
 
   '&::before': {
     borderBottom: '2px solid white',
