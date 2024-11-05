@@ -10,6 +10,7 @@ export const buttonStyles = {
   paddingLeft: '.8vw',
   position: 'relative',
   textShadow: '-1px 1px 1px black, -2px 2px 1px black, -3px 3px 1px black, -4px 4px 1px black, -5px 5px 1px black, -6px 6px 1px black, -7px 6px 1px black',
+  '-webkit-text-stroke': '1px black',
 
   '&:hover': {
     background: 'none',

@@ -31,5 +31,6 @@ export const baseColors = {
   darkBlue: 'rgba(23, 39, 62)',
   blueGray: 'rgba(45, 58, 75)',
   lightGray: 'rgba(241, 241, 241)',
-  gray: 'rgba(44, 44, 46)',
+  gray: 'rgba(220, 220, 220)',
+  darkGray: 'rgba(44, 44, 46)',
 };

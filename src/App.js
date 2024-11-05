@@ -4,8 +4,10 @@ import HomePage from 'components/Homepage/Homepage';
 import Body from 'components/Body/Body';
 import Footer from 'components/Footer/Footer';
 import styled from 'styled-components';
+import background from 'images/striped-back.jpg';
 
 const Wrapper = styled.div`
+  background: url(${background});
   overflow: auto;
 `;
 

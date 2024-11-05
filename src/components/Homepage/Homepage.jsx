@@ -1,10 +1,10 @@
 import React from 'react';
-import headerImage from 'images/city-landscape-border.jpg';
+import homeImage from 'images/homepage.png';
 import LinkButton from 'components/shared/LinkButton';
 import styled from 'styled-components';
 
 const Wrapper = styled.div`
-  background-image: url(${headerImage});
+  background: url(${homeImage});
   background-repeat: no-repeat;
   background-size: 100vw 100vh;
   display: flex;
@@ -35,7 +35,7 @@ const Wrapper = styled.div`
 
 const HomePage = () => {
   return (
-    <Wrapper id='bio'>
+    <Wrapper>
       <h1>Welcome to my site</h1>
       <div>
         <LinkButton href='resume-dev - overleaf (May 2024).pdf' text='Resume' />

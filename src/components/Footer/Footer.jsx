@@ -4,7 +4,6 @@ import { baseColors } from 'data/styles';
 import styled from 'styled-components';
 
 const FooterWrapper = styled.div`
-  background: ${baseColors.yellow};
   padding: 2vw 0;
 
   > h1 {
@@ -12,7 +11,7 @@ const FooterWrapper = styled.div`
   }
 
   > h3 {
-    background: ${baseColors.royalBlue};
+    background: ${baseColors.red};
     border: .5vw solid white;
     border-radius: 15px;
     line-height: 2vw;

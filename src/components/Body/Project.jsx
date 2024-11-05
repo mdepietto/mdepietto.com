@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { baseColors } from 'data/styles';
 import styled from 'styled-components';
 
@@ -10,7 +10,26 @@ const afterWidth = (width - 1.2).toString();
 const chop = '10';
 
 const Wrapper = styled.a`
-  background: linear-gradient(135deg, transparent ${chop}vw, white 0);
+  @keyframes scrollIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @keyframes glitch {
+    0%   {background: linear-gradient(135deg, transparent ${chop}vw, ${baseColors.darkGray} 0)}
+    25%  {background: linear-gradient(135deg, transparent ${chop}vw, ${baseColors.yellow} 0)}
+    50%  {background: linear-gradient(135deg, transparent ${chop}vw, ${baseColors.darkBlue} 0)}
+    100% {background: linear-gradient(135deg, transparent ${chop}vw, ${baseColors.lightGreen} 0)}
+  }
+   
+  animation: ${({ isVisible, hasScrolledIn }) => isVisible && !hasScrolledIn && `scrollIn 1.5s ease-in`};
+  opacity: ${({ isVisible }) => isVisible ? 1 : 0};
+  transform: ${({ isVisible }) => (isVisible ? 'translate(0, 0)' : 'translate(0, 6rem)')};
+  background: linear-gradient(135deg, transparent ${chop}vw, ${baseColors.blueGray} 0);
   border-radius: ${radius};
   color: white;
   cursor: pointer;
@@ -31,7 +50,7 @@ const Wrapper = styled.a`
     background: linear-gradient(
       135deg,
       transparent ${chop}vw,
-      ${baseColors.gray} ${chop}vw
+      ${baseColors.darkBlue} ${chop}vw
     );
     border-radius: ${radius};
     content: '';
@@ -53,19 +72,13 @@ const Wrapper = styled.a`
     );
   }
 
-  @keyframes glitch {
-    0%   {background: linear-gradient(135deg, transparent ${chop}vw, black 0)}
-    25%  {background: linear-gradient(135deg, transparent ${chop}vw, ${baseColors.yellow} 0)}
-    50%  {background: linear-gradient(135deg, transparent ${chop}vw, ${baseColors.gray} 0)}
-    100% {background: linear-gradient(135deg, transparent ${chop}vw, ${baseColors.lightGreen} 0)}
-  }
-
   &:after {
     content: '${({ number }) => `0${number}` }';
     font-size: 11vw;
     position: absolute;
     text-shadow: -1px 1px 1px black, -2px 2px 1px black, -3px 3px 1px black, -4px 4px 1px black, -5px 5px 1px black, -6px 6px 1px black, -7px 6px 1px black;
     transform: translateY(-15%);
+    -webkit-text-stroke: 1px black;
   }
 `;
 
@@ -100,8 +113,34 @@ const TitleWrapper = styled.h2`
 `;
 
 const Project = ({ description, image, link, number, title, tools }) => {
+  const ref = useRef(null);
+  const [ isVisible, setIsVisible ] = useState(false);
+  const [ hasScrolledIn, setHasScrolledIn ] = useState(false);
+
+  useEffect(() => {
+    const project = ref.current;
+
+    const observer = new IntersectionObserver(([entry]) => {
+      setIsVisible(entry.isIntersecting);
+
+      if (entry.isIntersecting && !hasScrolledIn) {
+        setHasScrolledIn(true);
+      }
+    }, {
+      root: null,
+      rootMargin: '0px',
+      threshold: '0.3',
+    })
+
+    project && observer.observe(project);
+
+    return () => {
+      project && observer.unobserve(project);
+    }
+  }, [hasScrolledIn]);
+
   return (
-    <Wrapper href={link} number={number} target='blank'>
+    <Wrapper href={link} isVisible={isVisible} hasScrolledIn={hasScrolledIn} number={number} ref={ref} target='blank'>
       <ImageWrapper alt={title} src={image} />
       <ContentsWrapper>
         <TitleWrapper>{title}</TitleWrapper>
