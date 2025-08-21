@@ -1,48 +1,63 @@
 import React from 'react';
-import homeImage from 'images/homepage.png';
+import homePage from 'videos/homepage.mov';
 import LinkButton from 'components/shared/LinkButton';
 import styled from 'styled-components';
 
 const Wrapper = styled.div`
-  background: url(${homeImage});
-  background-repeat: no-repeat;
-  background-size: 100vw 100vh;
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-  justify-content: center;
-  padding-left: 8vw;
+  text-align: center;
+  position: relative;
 
   > * {
     animation: slideIn 0.5s forwards;
-    transform: translateX(-100%);
-  }
-
-  > div {
-    margin-top: 2vw;
+    transform: translateY(-100%);
   }
 
   @keyframes slideIn {
     to {
-      transform: translateX(0);
+      transform: translateY(0);
     }
-  }
-
-  @media screen and (max-width: 1007px) {
-    flex-direction: column;
   }
 `;
 
-const HomePage = () => {
-  return (
-    <Wrapper>
+const StyledVideo = styled.video`
+  border-bottom-right-radius: 100px;
+  border-bottom-left-radius: 100px;
+  width: 90%;
+  height: auto;
+`;
+
+const InfoWrapper = styled.div`
+  flex-direction: column;
+  padding-left: 8vw;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  top: 0;
+  height: 100%;
+`;
+
+const ButtonsWrapper = styled.div`
+  margin-top: 2vw;
+`;
+
+const HomePage = () => (
+  <Wrapper>
+    <StyledVideo
+      autoPlay
+      loop
+      src={homePage}
+      alt='city-scape-background'
+      type='video/mov'
+    />
+
+    <InfoWrapper>
       <h1>Welcome to my site</h1>
-      <div>
-        <LinkButton href='resume-dev - overleaf (May 2024).pdf' text='Resume' />
+      <ButtonsWrapper>
+        <LinkButton href='resume-dev.pdf' text='Resume' />
         <LinkButton href='https://github.com/mdepietto' text='GitHub' />
-      </div>
-    </Wrapper>
-  )
-}
+      </ButtonsWrapper>
+    </InfoWrapper>
+  </Wrapper>
+);
 
 export default HomePage;

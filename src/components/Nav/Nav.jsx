@@ -31,24 +31,22 @@ const NavButtonsWrapper = styled.div`
   width: 17%;
 `;
 
-const Nav = () => {
-  return (
-    <AppBar color='inherit' sx={appBarStyles}>
-      <Toolbar>
-        <Typography
-          variant="h4"
-          sx={typographyStyles}
-        >
-          MD
-        </Typography>
-        <NavButtonsWrapper>
-          <NavButton blank={false} href='#' text='Home' />
-          <NavButton blank={false} href='#body' text='Projects' />
-          <NavButton blank={false} href='#contact-me' text='Contact' />
-        </NavButtonsWrapper>
-      </Toolbar>
-    </AppBar>
-  )
-}
+const Nav = () => (
+  <AppBar color='inherit' sx={appBarStyles}>
+    <Toolbar>
+      <Typography
+        variant="h4"
+        sx={typographyStyles}
+      >
+        MD
+      </Typography>
+      <NavButtonsWrapper>
+        <NavButton blank={false} href='#' text='Home' />
+        <NavButton blank={false} href='#body' text='Projects' />
+        <NavButton blank={false} href='#contact-me' text='Contact' />
+      </NavButtonsWrapper>
+    </Toolbar>
+  </AppBar>
+);
 
 export default Nav;

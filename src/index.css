@@ -1,3 +1,14 @@
+:root {
+  --light-green: rgba(184, 233, 23);
+  --yellow: rgba(234, 237, 19);
+  --red: rgba(242, 17, 47);
+  --dark-blue: rgba(23, 39, 62);
+  --blue-gray: rgba(45, 58, 75);
+  --light-gray: rgba(241, 241, 241);
+  --gray: rgba(220, 220, 220);
+  --dark-gray: rgb(58, 58, 59);
+}
+
 html {
   color: white;
   scroll-behavior: smooth;
@@ -15,11 +26,38 @@ body {
 
 h1 {
   -webkit-text-stroke: 1px black;
+  position: relative;
   font-size: 5vw;
   font-weight: normal;
   line-height: 5vw;
   margin: 1vw 0;
   text-shadow: -1px 1px 1px black, -2px 2px 1px black, -3px 3px 1px black, -4px 4px 1px black, -5px 5px 1px black, -6px 6px 1px black, -7px 6px 1px black;
+  
+  background: linear-gradient(45deg, var(--light-green) 18vw, transparent 0);
+  border-bottom-right-radius: 15px;
+  padding: 1.5vw;
+  position: relative;
+  width: 20vw;
+}
+
+#with-border::before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 40%;
+  border-top: 6px solid var(--dark-blue);
+}
+
+#with-border::after {
+  content: '';
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 70%;
+  border-bottom: 6px solid var(--dark-blue);
 }
 
 h2 {

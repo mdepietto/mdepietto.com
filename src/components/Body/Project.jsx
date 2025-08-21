@@ -1,47 +1,34 @@
-import React, { useEffect, useRef, useState } from 'react';
-import { baseColors } from 'data/styles';
+import React from 'react';
 import styled from 'styled-components';
 
 const radius = '15px';
-const height = '25';
-const width = '35';
-const afterHeight = (height - 1.2).toString();
-const afterWidth = (width - 1.2).toString();
+const height = '24';
+const width = '33';
+const beforeHeight = (height - 1.2).toString();
+const beforeWidth = (width - 1.2).toString();
 const chop = '10';
 
 const Wrapper = styled.a`
-  @keyframes scrollIn {
-    0% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
-    }
-  }
-
-  @keyframes glitch {
-    0%   {background: linear-gradient(135deg, transparent ${chop}vw, ${baseColors.darkGray} 0)}
-    25%  {background: linear-gradient(135deg, transparent ${chop}vw, ${baseColors.yellow} 0)}
-    50%  {background: linear-gradient(135deg, transparent ${chop}vw, ${baseColors.darkBlue} 0)}
-    100% {background: linear-gradient(135deg, transparent ${chop}vw, ${baseColors.lightGreen} 0)}
-  }
-   
-  animation: ${({ isVisible, hasScrolledIn }) => isVisible && !hasScrolledIn && `scrollIn 1.5s ease-in`};
-  opacity: ${({ isVisible }) => isVisible ? 1 : 0};
-  transform: ${({ isVisible }) => (isVisible ? 'translate(0, 0)' : 'translate(0, 6rem)')};
-  background: linear-gradient(135deg, transparent ${chop}vw, ${baseColors.blueGray} 0);
+  background: linear-gradient(135deg, transparent ${chop}vw, var(--dark-blue) 0);
   border-radius: ${radius};
   color: white;
   cursor: pointer;
   height: ${height}vw;
-  margin: 4vw;
+  margin: 3vw;
   position: relative;
   width: ${width}vw;
   transition: all .2s ease-in-out;
   z-index: 0;
 
+  @keyframes glitch {
+    0%   {background: linear-gradient(135deg, transparent ${chop}vw, var(--dark-gray) 0)}
+    25%  {background: linear-gradient(135deg, transparent ${chop}vw, var(--yellow) 0)}
+    50%  {background: linear-gradient(135deg, transparent ${chop}vw, var(--dark-blue) 0)}
+    100% {background: linear-gradient(135deg, transparent ${chop}vw, var(--light-green) 0)}
+  }
+
   &:hover {
-    animation: glitch .3s forwards;
+    animation: glitch .2s forwards;
     box-shadow: 0 20px 5px -5px black;
     transform: scale(1.05);
   }
@@ -50,17 +37,16 @@ const Wrapper = styled.a`
     background: linear-gradient(
       135deg,
       transparent ${chop}vw,
-      ${baseColors.darkBlue} ${chop}vw
+      var(--blue-gray) ${chop}vw
     );
     border-radius: ${radius};
     content: '';
-    font-size: 14vw;
-    height: ${afterHeight}vw;
+    height: ${beforeHeight}vw;
     left: 50%;
     position: absolute;
     transform: translate(-50%, -50%);
     top: 50%;
-    width: ${afterWidth}vw;
+    width: ${beforeWidth}vw;
     z-index: -1;
   }
 
@@ -68,7 +54,7 @@ const Wrapper = styled.a`
     background: linear-gradient(
       135deg,
       transparent ${chop}vw,
-      ${baseColors.blueGray} ${chop}vw
+      var(--gray) ${chop}vw
     );
   }
 
@@ -87,7 +73,7 @@ const ImageWrapper = styled.img`
   position: absolute;
   right: 1.5vw;
   top: 1.5vw;
-  width: 18vw;
+  width: 17vw;
 `;
 
 const ContentsWrapper = styled.div`
@@ -112,43 +98,15 @@ const TitleWrapper = styled.h2`
   text-underline-offset: .7vw;
 `;
 
-const Project = ({ description, image, link, number, title, tools }) => {
-  const ref = useRef(null);
-  const [ isVisible, setIsVisible ] = useState(false);
-  const [ hasScrolledIn, setHasScrolledIn ] = useState(false);
-
-  useEffect(() => {
-    const project = ref.current;
-
-    const observer = new IntersectionObserver(([entry]) => {
-      setIsVisible(entry.isIntersecting);
-
-      if (entry.isIntersecting && !hasScrolledIn) {
-        setHasScrolledIn(true);
-      }
-    }, {
-      root: null,
-      rootMargin: '0px',
-      threshold: '0.3',
-    })
-
-    project && observer.observe(project);
-
-    return () => {
-      project && observer.unobserve(project);
-    }
-  }, [hasScrolledIn]);
-
-  return (
-    <Wrapper href={link} isVisible={isVisible} hasScrolledIn={hasScrolledIn} number={number} ref={ref} target='blank'>
-      <ImageWrapper alt={title} src={image} />
-      <ContentsWrapper>
-        <TitleWrapper>{title}</TitleWrapper>
-        <h3>{description}</h3>
-        <h3>- {tools}</h3>
-      </ContentsWrapper>
-    </Wrapper>
-  );
-};
+const Project = ({ description, image, link, number, title, tools }) => (
+  <Wrapper href={link} number={number} target='blank'>
+    <ImageWrapper alt={title} src={image} />
+    <ContentsWrapper>
+      <TitleWrapper>{title}</TitleWrapper>
+      <h3>{description}</h3>
+      <h3>- {tools}</h3>
+    </ContentsWrapper>
+  </Wrapper>
+);
 
 export default Project;

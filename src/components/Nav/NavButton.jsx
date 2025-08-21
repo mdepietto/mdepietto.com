@@ -27,17 +27,15 @@ const navButtonStyles = {
   },
 }
 
-const NavButton = ({ blank, href, text }) => {
-  return (
-    <Button
-      color="inherit"
-      href={href}
-      target={blank ? 'blank' : null}
-      sx={navButtonStyles}
-    >
-      {text}
-    </Button>
-  );
-};
+const NavButton = ({ blank, href, text }) => (
+  <Button
+    color="inherit"
+    href={href}
+    target={blank ? 'blank' : null}
+    sx={navButtonStyles}
+  >
+    {text}
+  </Button>
+);
 
 export default NavButton;

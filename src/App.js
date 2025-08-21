@@ -4,22 +4,42 @@ import HomePage from 'components/Homepage/Homepage';
 import Body from 'components/Body/Body';
 import Footer from 'components/Footer/Footer';
 import styled from 'styled-components';
-import background from 'images/striped-back.jpg';
+import ScrollHOC from 'components/shared/ScrollHOC';
+import background from 'images/backgrounds/striped-background.jpg';
+import fillBlackZ from 'images/accents/fill-black-z.png';
 
 const Wrapper = styled.div`
   background: url(${background});
-  overflow: auto;
+  overflow: hidden;
 `;
 
-const App = () => {
-  return (
-    <Wrapper>
-      <Nav />
-      <HomePage />
-      <Body />
-      <Footer />
-    </Wrapper>
-  );
-}
+const BackgroundWrapper = styled.div`
+  position: relative;
+`;
+
+const StyledFillBlackZ = styled.img`
+  position: absolute;
+  transform: scaleX(-1);
+  inset: 0;
+  width: 100%;
+  objectFit: cover;
+  opacity: 90%;
+  top: 100px;
+`;
+
+const App = () => (
+  <Wrapper>
+    <Nav />
+
+    <HomePage />
+
+    <BackgroundWrapper>
+      <StyledFillBlackZ src={fillBlackZ} alt='black zig zag accent' />
+      <ScrollHOC Component={Body} />
+    </BackgroundWrapper>
+
+    <ScrollHOC Component={Footer} />
+  </Wrapper>
+);
 
 export default App;

@@ -1,6 +1,5 @@
 import React from 'react';
 import { Button } from '@mui/material';
-import { baseColors } from 'data/styles';
 
 export const buttonStyles = {
   color: 'white',
@@ -14,7 +13,7 @@ export const buttonStyles = {
 
   '&:hover': {
     background: 'none',
-    color: baseColors.lightGreen,
+    color: 'var(--light-green)',
   },
 
   '&::before': {
@@ -36,16 +35,14 @@ export const buttonStyles = {
   },
 }
 
-const LinkButton = ({ href, text }) => {
-  return (
-    <Button
-      href={href}
-      sx={buttonStyles}
-      target='blank'
-    >
-      {text}
-    </Button>
-  );
-};
+const LinkButton = ({ href, text }) => (
+  <Button
+    href={href}
+    sx={buttonStyles}
+    target='blank'
+  >
+    {text}
+  </Button>
+);
 
 export default LinkButton;
