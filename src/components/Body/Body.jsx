@@ -8,7 +8,7 @@ import movieSearch from 'images/thumbnails/movie-search.jpg';
 import styled from 'styled-components';
 
 const Wrapper = styled.div`
-  margin: 4vw 0;
+  margin-top: 4vw;
 
   > div {
     display: flex;

@@ -3,6 +3,8 @@ import NavButton from 'components/Nav/NavButton';
 import { AppBar, Toolbar, Typography } from '@mui/material';
 import styled from 'styled-components';
 
+// TODO: @768px change to accordion menu
+
 const appBarStyles = {
   background: 'linear-gradient(to bottom, rgba(25, 32, 34, .6), 20%, rgba(0, 0, 0, 0))',
   backgroundColor: 'rgba(0, 0, 0, 0)',
@@ -20,7 +22,7 @@ const appBarStyles = {
 const typographyStyles = {
   flexGrow: 1,
   fontFamily: '"Anton", sans-serif',
-  fontSize: '3vw',
+  fontSize: '3.5rem',
   textShadow: '-1px 1px 1px black, -2px 2px 1px black, -3px 3px 1px black, -4px 4px 1px black, -5px 5px 1px black, -6px 6px 1px black, -7px 6px 1px black',
   '-webkit-text-stroke': '1px black',
 }
@@ -28,7 +30,6 @@ const typographyStyles = {
 const NavButtonsWrapper = styled.div`
   display: flex;
   justify-content: space-around;
-  width: 17%;
 `;
 
 const Nav = () => (

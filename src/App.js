@@ -7,6 +7,7 @@ import styled from 'styled-components';
 import ScrollHOC from 'components/shared/ScrollHOC';
 import background from 'images/backgrounds/striped-background.jpg';
 import fillBlackZ from 'images/accents/fill-black-z.png';
+import fillBlack from 'images/accents/fill-black.png';
 
 const Wrapper = styled.div`
   background: url(${background});
@@ -27,6 +28,16 @@ const StyledFillBlackZ = styled.img`
   top: 100px;
 `;
 
+const StyledFillBlack = styled.img`
+  position: absolute;
+  width: 38%;
+  transform: rotate(5deg);
+  objectFit: cover;
+  opacity: 90%;
+  top: -13vw;
+  right: 0;
+`;
+
 const App = () => (
   <Wrapper>
     <Nav />
@@ -38,7 +49,11 @@ const App = () => (
       <ScrollHOC Component={Body} />
     </BackgroundWrapper>
 
-    <ScrollHOC Component={Footer} />
+    <BackgroundWrapper>
+
+      <StyledFillBlack src={fillBlack} alt='black stripe accent' />
+      <ScrollHOC Component={Footer} />
+    </BackgroundWrapper>
   </Wrapper>
 );
 

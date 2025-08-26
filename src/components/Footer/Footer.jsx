@@ -1,11 +1,12 @@
 import React from 'react';
 import ContactMe from 'components/Footer/ContactMe';
+import ScrollHOC from 'components/shared/ScrollHOC';
 import footerBackground from 'images/backgrounds/footer-background.png';
 import venn from 'images/accents/venn.png';
+import spreadsheet from 'images/accents/spreadsheet.png';
+import puzzle from 'images/accents/puzzle.png';
+import console from 'images/accents/console.png';
 import styled from 'styled-components';
-
-const FooterWrapper = styled.div`
-`;
 
 const InfoWrapper = styled.div`
   background-image: url(${footerBackground});
@@ -17,63 +18,100 @@ const InfoWrapper = styled.div`
   width: 90%;
   height: auto;
   margin: auto;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  & > div:first-of-type {
+    margin-top: 4vw;
+  }
 `;
 
 const ComboWrapper = styled.div`
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  position: relative;
 `;
 
-const StyledH3 = styled.h3`
-  width: 40%;
-  background: var(--dark-gray);
-  border: .5vw solid white;
-  border-radius: 15px;
-  line-height: 2vw;
-  padding: 2vw;
+const StyledH2 = styled.h2`
   text-align: center;
+  flex: 1 1 50%;
+  height: auto;
+  max-width: 50%;
+  align-self: center;
+  z-index: 1;
+  background-color: rgba(0, 0, 0, .6);
+  padding: 2vw;
+  border-radius: 10px;
+  line-height: 50px;
 `;
 
-const StyledVenn = styled.img`
-  width: 60%;
+const StyledAccent = styled.img`
+  flex: 1 1 50%;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  max-width: 30%;
+  z-index: 1;
+`;
+
+const AccentWords = styled.span`
+  color: var(--light-green);
 `;
 
 const Footer = () => (
-  <FooterWrapper>
-
+  <div>
     <h1 id='with-border'>About Me</h1>
 
     <InfoWrapper>
-      {/* <StyledH3>
-        I was always tinkering with something: Taking things apart,
-        figuring out how it all worked, and putting it back together.
-        It started with pens in elementary school.
-        Then, with the help of my father, to taking apart cable boxes and tv components.
-        Finally, to coding. It was only natural to follow the self-taught,
-        trial and error style learning for that as well. I find that programming has
-        been a great direction to go to scratch the itch for problem solving,
-        conceptualizing, and strategizing that I've had my whole life. I'm excited to
-        continue sharpening my skillset and take that tinkering to new heights.
-      </StyledH3> */}
-
-      {/* <StyledH3>
-        I'm Michael DePietto: a Software Developer base in New York, although,
-        I use the word "y'all" and don't really like the pizza here, so
-        maybe an outsider in disguise.
-      </StyledH3> */}
-
-      <ComboWrapper>
-        <StyledH3>
+      <ScrollHOC Component={ComboWrapper}>
+        <StyledH2>
           This profession seems to be the only one that completes my personal Venn diagram
-          of interest:
-        </StyledH3>
+          of <AccentWords>interests</AccentWords>
+        </StyledH2>
 
-        <StyledVenn src={venn} alt='venn diagram of interests' />
-      </ComboWrapper>
+        <StyledAccent src={venn} alt='venn diagram of interests' />
+      </ScrollHOC>
+
+      <ScrollHOC Component={ComboWrapper}>
+        <StyledAccent src={spreadsheet} alt='spreadsheet question marks' />
+
+        <StyledH2>
+          I’m a <AccentWords>Frontend Engineer</AccentWords> from New York who
+          found my way into software development after a long
+          <AccentWords> (spreadsheet-filled and borderline OCD) </AccentWords>
+          conversation with some engineering friends about aligning my
+          interests with a career.
+        </StyledH2>
+      </ScrollHOC>
+
+      <ScrollHOC Component={ComboWrapper}>
+        <StyledH2>
+          These days, I specialize in <AccentWords>React, JavaScript, & Node </AccentWords>,
+          where I get to combine my <AccentWords>detail-oriented, user-focused approach </AccentWords>
+          with my love of <AccentWords>problem-solving</AccentWords>. Whether it’s
+          designing intuitive interfaces or strategizing through complex challenges,
+          I treat coding like solving a puzzle: <AccentWords>creative and engaging</AccentWords>.
+        </StyledH2>
+
+        <StyledAccent src={puzzle} alt='puzzle' />
+      </ScrollHOC>
+
+      <ScrollHOC Component={ComboWrapper}>
+        <StyledAccent src={console} alt='game console' />
+        <StyledH2>
+          Outside of building software, you’ll usually find me
+          <AccentWords> playing video games</AccentWords> or
+          <AccentWords> working out</AccentWords>, so I'm basically a monk
+          training mind and body.
+        </StyledH2>
+      </ScrollHOC>
 
       <ContactMe />
+
     </InfoWrapper>
-  </FooterWrapper>
+  </div>
 );
 
 export default Footer;
