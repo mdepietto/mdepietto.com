@@ -1,5 +1,6 @@
 import React from 'react';
 import Project from 'components/Body/Project';
+import ScrollHOC from 'components/shared/ScrollHOC';
 import chic from 'images/thumbnails/chic.png';
 import mediaShelf from 'images/thumbnails/media-shelf.jpg';
 import mastermind from 'images/thumbnails/mastermind.jpg';
@@ -10,18 +11,24 @@ import styled from 'styled-components';
 const Wrapper = styled.div`
   margin-top: 4vw;
 
-  > div {
+  > div > div {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     width: 100%;
+  }
+
+  @media(max-width: 500px) {
+    > div > div {
+      margin: 5vw 0;
+    }
   }
 `;
 
 const Body = () => (
   <Wrapper id='body'>
     <h1 id='with-border'>Projects</h1>
-    <div>
+    <ScrollHOC Component="div">
       <Project
         description='A landing page for a fresh hair/lash salon in NYC with pseudo scheduling functionality'
         image={chic}
@@ -35,7 +42,7 @@ const Body = () => (
         image={mediaShelf}
         link='https://github.com/mdepietto/media-shelf'
         number={2}
-        title='Media Shelf (in progress)'
+        title='Media Shelf'
         tools='React Node Express SQL'
       />
       <Project
@@ -62,7 +69,7 @@ const Body = () => (
         title='E-commerce Trombones'
         tools='HTML CSS'
       /> */}
-    </div>
+    </ScrollHOC>
   </Wrapper>
 );
 

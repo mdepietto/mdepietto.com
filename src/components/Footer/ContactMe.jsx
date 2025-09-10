@@ -6,7 +6,9 @@ const ContactMeWrapper = styled.div`
   align-items: center;
   display: flex;
   flex-direction: column;
-  margin-bottom: 4vw;
+  justify-content: center;
+  margin: 0 5vw 6vw;
+  width: 30%;
 `;
 
 const ButtonsWrapper = styled.div`

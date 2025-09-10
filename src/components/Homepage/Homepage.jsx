@@ -7,23 +7,27 @@ const Wrapper = styled.div`
   text-align: center;
   position: relative;
 
-  > * {
-    animation: slideIn 0.5s forwards;
-    transform: translateY(-100%);
-  }
-
-  @keyframes slideIn {
-    to {
-      transform: translateY(0);
-    }
+  @media(max-width: 768px) {
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
   }
 `;
+
+// TODO: mess around with the height of the Wrapper
 
 const StyledVideo = styled.video`
   border-bottom-right-radius: 100px;
   border-bottom-left-radius: 100px;
   width: 90%;
-  height: auto;
+  
+  @media(max-width: 768px) {
+    border-radius: 0;
+    display: block;
+    object-fill: cover;
+    transform: scale(3.9) translate(-15vw, -3vw);
+  }
 `;
 
 const InfoWrapper = styled.div`
@@ -31,9 +35,24 @@ const InfoWrapper = styled.div`
   padding-left: 8vw;
   position: absolute;
   display: flex;
-  justify-content: center;
-  top: 0;
   height: 100%;
+  justify-content: center;
+  bottom: 0;
+  width: 25%;
+
+  @media(max-width: 1280px) {
+    width: 29%;
+  }
+
+  @media(max-width: 1024px) {
+    width: 40%;
+  }
+
+  @media(max-width: 768px) {
+    padding-left: 0;
+    width: 75%;
+    bottom: -38vw;
+  }
 `;
 
 const ButtonsWrapper = styled.div`

@@ -27,17 +27,16 @@ body {
 h1 {
   -webkit-text-stroke: 1px black;
   position: relative;
-  font-size: 5vw;
+  font-size: 6rem;
   font-weight: normal;
-  line-height: 5vw;
-  margin: 1vw 0;
+  line-height: 6rem;
+  margin-top: 1rem;
+  margin-bottom: 0;
   text-shadow: -1px 1px 1px black, -2px 2px 1px black, -3px 3px 1px black, -4px 4px 1px black, -5px 5px 1px black, -6px 6px 1px black, -7px 6px 1px black;
-  
+  text-align: left;
   background: linear-gradient(45deg, var(--light-green) 18vw, transparent 0);
   border-bottom-right-radius: 15px;
   padding: 1.5vw;
-  position: relative;
-  width: 20vw;
 }
 
 #with-border::before {
@@ -46,7 +45,7 @@ h1 {
   position: absolute;
   top: 0;
   left: 0;
-  width: 40%;
+  width: 10%;
   border-top: 6px solid var(--dark-blue);
 }
 
@@ -56,7 +55,7 @@ h1 {
   position: absolute;
   bottom: 0;
   left: 0;
-  width: 70%;
+  width: 20%;
   border-bottom: 6px solid var(--dark-blue);
 }
 
@@ -74,13 +73,76 @@ h3 {
   font-weight: normal;
   line-height: 1.3vw;
   margin: .6vw 0;
+  text-shadow: -1px 1px 1px black, -2px 2px 1px black;
 }
 
-p {
-  font-size: 1vw;
-  /* font-weight: normal; */
-  line-height: 1vw;
-  margin: .1vw 0;
+/* RESPONSIVE */
+@media(max-width: 1280px) {
+  h1 {
+    font-size: 5rem;
+    line-height: 5rem;
+  }
+
+  h2 {
+    font-size: 2.5vw;
+  }
+
+  h3 {
+    font-size: 1.5vw;
+    line-height: 1.5vw;
+  }
+}
+
+@media(max-width: 1024px) {
+  h1 {
+    font-size: 4rem;
+    line-height: 4rem;
+  }
+
+  h2 {
+    font-size: 3vw;
+  }
+
+  h3 {
+    font-size: 1.8vw;
+    line-height: 1.8vw;
+  }
+}
+
+@media(max-width: 768px) {
+  h1 {
+    font-size: 6rem;
+    line-height: 6rem;
+    background: linear-gradient(45deg, var(--light-green) 30vw, transparent 0);
+  }
+
+  h2 {
+    font-size: 5.5vw;
+    line-height: 5.5vw;
+  }
+
+  h3 {
+    font-size: 3vw;
+    line-height: 3.1vw;
+  }
+}
+
+@media(max-width: 500px) {
+  h1 {
+    font-size: 6rem;
+    line-height: 6rem;
+    background: linear-gradient(45deg, var(--light-green) 30vw, transparent 0);
+  }
+
+  h2 {
+    font-size: 10vw;
+    line-height: 12vw;
+  }
+
+  h3 {
+    font-size: 6vw;
+    line-height: 6.5vw;
+  }
 }
 
 /* sizes: */

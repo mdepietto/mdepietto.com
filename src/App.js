@@ -4,7 +4,6 @@ import HomePage from 'components/Homepage/Homepage';
 import Body from 'components/Body/Body';
 import Footer from 'components/Footer/Footer';
 import styled from 'styled-components';
-import ScrollHOC from 'components/shared/ScrollHOC';
 import background from 'images/backgrounds/striped-background.jpg';
 import fillBlackZ from 'images/accents/fill-black-z.png';
 import fillBlack from 'images/accents/fill-black.png';
@@ -12,10 +11,13 @@ import fillBlack from 'images/accents/fill-black.png';
 const Wrapper = styled.div`
   background: url(${background});
   overflow: hidden;
+  position: relative;
 `;
 
 const BackgroundWrapper = styled.div`
   position: relative;
+  width: 100%;
+  height: auto;
 `;
 
 const StyledFillBlackZ = styled.img`
@@ -26,6 +28,16 @@ const StyledFillBlackZ = styled.img`
   objectFit: cover;
   opacity: 90%;
   top: 100px;
+  z-index: 0;
+
+  @media(max-width: 768px) {
+    height: 75%;
+  }
+
+  @media(max-width: 500px) {
+    top: 25vw;
+    height: 60%;
+  }
 `;
 
 const StyledFillBlack = styled.img`
@@ -34,8 +46,18 @@ const StyledFillBlack = styled.img`
   transform: rotate(5deg);
   objectFit: cover;
   opacity: 90%;
-  top: -13vw;
+  bottom: -40vw;
   right: 0;
+
+  @media(max-width: 768px) {
+    width: 70%;
+    bottom: -45vw;
+  }
+
+  @media(max-width: 500px) {
+    width: 130%;
+    bottom: -50vw;
+  }
 `;
 
 const App = () => (
@@ -46,14 +68,11 @@ const App = () => (
 
     <BackgroundWrapper>
       <StyledFillBlackZ src={fillBlackZ} alt='black zig zag accent' />
-      <ScrollHOC Component={Body} />
-    </BackgroundWrapper>
-
-    <BackgroundWrapper>
-
       <StyledFillBlack src={fillBlack} alt='black stripe accent' />
-      <ScrollHOC Component={Footer} />
+      <Body />
     </BackgroundWrapper>
+
+    <Footer />
   </Wrapper>
 );
 
