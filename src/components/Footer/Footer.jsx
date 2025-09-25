@@ -59,6 +59,10 @@ const StyledH2 = styled.h2`
   border-radius: 10px;
   line-height: 50px;
 
+  @media(max-width: 1024px) {
+    line-height: 4vw;
+  }
+
   @media(max-width: 768px) {
     font-size: 3.5vw;
     line-height: 4vw;

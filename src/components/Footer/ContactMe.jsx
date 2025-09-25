@@ -12,6 +12,7 @@ const ContactMeWrapper = styled.div`
 `;
 
 const ButtonsWrapper = styled.div`
+  margin-top: 2vw;
   display: flex;
   justify-content: space-evenly;
 `;

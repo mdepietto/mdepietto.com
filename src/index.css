@@ -129,8 +129,8 @@ h3 {
 
 @media(max-width: 500px) {
   h1 {
-    font-size: 6rem;
-    line-height: 6rem;
+    font-size: 5rem;
+    line-height: 5rem;
     background: linear-gradient(45deg, var(--light-green) 30vw, transparent 0);
   }
 
@@ -142,6 +142,13 @@ h3 {
   h3 {
     font-size: 6vw;
     line-height: 6.5vw;
+  }
+}
+
+@media(max-width: 390px) {
+  h1 {
+    font-size: 4.5rem;
+    line-height: 4.5rem;
   }
 }
 

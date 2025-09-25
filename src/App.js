@@ -1,5 +1,6 @@
 import React from 'react';
 import Nav from 'components/Nav/Nav';
+import NavMenu from 'components/Nav/NavMenu';
 import HomePage from 'components/Homepage/Homepage';
 import Body from 'components/Body/Body';
 import Footer from 'components/Footer/Footer';
@@ -62,7 +63,13 @@ const StyledFillBlack = styled.img`
 
 const App = () => (
   <Wrapper>
-    <Nav />
+    {
+      window.innerWidth > 768 ? (
+        <Nav />
+      ) : (
+        <NavMenu />
+      )
+    }
 
     <HomePage />
 

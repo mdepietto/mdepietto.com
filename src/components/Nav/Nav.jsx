@@ -3,8 +3,6 @@ import NavButton from 'components/Nav/NavButton';
 import { AppBar, Toolbar, Typography } from '@mui/material';
 import styled from 'styled-components';
 
-// TODO: @768px change to accordion menu
-
 const appBarStyles = {
   background: 'linear-gradient(to bottom, rgba(25, 32, 34, .6), 20%, rgba(0, 0, 0, 0))',
   backgroundColor: 'rgba(0, 0, 0, 0)',

@@ -8,14 +8,12 @@ const Wrapper = styled.div`
   position: relative;
 
   @media(max-width: 768px) {
+    height: 40rem;
     display: flex;
     justify-content: center;
-    height: 100vh;
     overflow: hidden;
   }
 `;
-
-// TODO: mess around with the height of the Wrapper
 
 const StyledVideo = styled.video`
   border-bottom-right-radius: 100px;
@@ -26,7 +24,11 @@ const StyledVideo = styled.video`
     border-radius: 0;
     display: block;
     object-fill: cover;
-    transform: scale(3.9) translate(-15vw, -3vw);
+    transform: scale(2.7) translate(-15vw, -6vw);
+  }
+
+  @media(max-width: 500px) {
+    transform: scale(3.6) translate(-15vw, -5vw);
   }
 `;
 
@@ -51,7 +53,16 @@ const InfoWrapper = styled.div`
   @media(max-width: 768px) {
     padding-left: 0;
     width: 75%;
-    bottom: -38vw;
+    bottom: -20vw;
+  }
+
+  @media(max-width: 550px) {
+    width: 82%;
+  }
+
+  @media(max-width: 500px) {
+    bottom: -30vw;
+    width: 90%;
   }
 `;
 
