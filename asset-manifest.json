@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/mdepietto.com/static/css/main.bdf8679a.css",
+    "main.js": "/mdepietto.com/static/js/main.0a3d6aa8.js",
+    "static/media/footer-background.png": "/mdepietto.com/static/media/footer-background.2a60a936298126500e56.png",
+    "static/media/homepage.mov": "/mdepietto.com/static/media/homepage.316c0a953afc1b30506e.mov",
+    "static/media/chic.png": "/mdepietto.com/static/media/chic.e3683231edbb3d30d2fc.png",
+    "static/media/striped-background.jpg": "/mdepietto.com/static/media/striped-background.8dc26bceb0e11043233c.jpg",
+    "static/media/console.png": "/mdepietto.com/static/media/console.bdb466f30718a7a98536.png",
+    "static/media/venn.png": "/mdepietto.com/static/media/venn.2a22cc9247938defd2db.png",
+    "static/media/fill-black-z.png": "/mdepietto.com/static/media/fill-black-z.9c5f6aa5f03275de6c29.png",
+    "static/media/spreadsheet.png": "/mdepietto.com/static/media/spreadsheet.3db7dfc4541090fd43f6.png",
+    "static/media/puzzle.png": "/mdepietto.com/static/media/puzzle.2387166d3021daf87200.png",
+    "static/media/media-shelf.jpg": "/mdepietto.com/static/media/media-shelf.dfd0998791a3cca991a9.jpg",
+    "static/media/fill-black.png": "/mdepietto.com/static/media/fill-black.c6c1db1b96bc451e00cb.png",
+    "static/media/mastermind.jpg": "/mdepietto.com/static/media/mastermind.db7edcc1e94de4e5cd5d.jpg",
+    "static/media/movie-search.jpg": "/mdepietto.com/static/media/movie-search.7577ee935e9634346a8d.jpg",
+    "index.html": "/mdepietto.com/index.html",
+    "main.bdf8679a.css.map": "/mdepietto.com/static/css/main.bdf8679a.css.map",
+    "main.0a3d6aa8.js.map": "/mdepietto.com/static/js/main.0a3d6aa8.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.bdf8679a.css",
+    "static/js/main.0a3d6aa8.js"
+  ]
+}
