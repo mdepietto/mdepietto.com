@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import Box from '@mui/material/Box';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
@@ -10,7 +9,7 @@ const boxStyles = {
   backgroundColor: 'var(--dark-blue)',
   transform: 'rotate(90deg) translate(-2rem, -9rem)',
   zIndex: 1000,
-  clipPath: 'polygon(0 50%, 500px 0, 20px 100%, 0 50%, 20px 0, calc(100% - 20px) 0, calc(100% - 20px) 100%, 20px 100%, calc(100% - 20px) 0, 100% 50%, calc(100% - 20px) 100%)',
+  clipPath: 'polygon(0 50%, 320px 0, 20px 100%, 0 50%, 20px 0, calc(100% - 20px) 0, calc(100% - 20px) 100%, 20px 100%, calc(100% - 20px) 0, 100% 50%, calc(100% - 20px) 100%)',
 
   '& > div': {
     margin: '0 2rem',

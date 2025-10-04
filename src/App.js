@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Nav from 'components/Nav/Nav';
 import NavMenu from 'components/Nav/NavMenu';
 import HomePage from 'components/Homepage/Homepage';
@@ -61,26 +61,38 @@ const StyledFillBlack = styled.img`
   }
 `;
 
-const App = () => (
-  <Wrapper>
-    {
-      window.innerWidth > 768 ? (
-        <Nav />
-      ) : (
-        <NavMenu />
-      )
+const App = () => {
+  useEffect(() => {
+    const actual = window.innerWidth;
+    const screen = window.screen.width;
+
+    if (actual > 900 && screen < 600) {
+      alert("Looks like Desktop mode is enabled in your browser. Disable for full mobile experience 🫡");
+      // Optionally show a UI hint to disable desktop mode
     }
+  }, []);
 
-    <HomePage />
+  return (
+    <Wrapper>
+      {
+        window.innerWidth > 768 ? (
+          <Nav />
+        ) : (
+          <NavMenu />
+        )
+      }
 
-    <BackgroundWrapper>
-      <StyledFillBlackZ src={fillBlackZ} alt='black zig zag accent' />
-      <StyledFillBlack src={fillBlack} alt='black stripe accent' />
-      <Body />
-    </BackgroundWrapper>
+      <HomePage />
 
-    <Footer />
-  </Wrapper>
-);
+      <BackgroundWrapper>
+        <StyledFillBlackZ src={fillBlackZ} alt='black zig zag accent' />
+        <StyledFillBlack src={fillBlack} alt='black stripe accent' />
+        <Body />
+      </BackgroundWrapper>
+
+      <Footer />
+    </Wrapper>
+  )
+};
 
 export default App;
